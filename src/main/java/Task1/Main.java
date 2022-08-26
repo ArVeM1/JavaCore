@@ -8,7 +8,8 @@ public class Main {
         Random rand = new Random();
         int max =  Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
-        int mean = 0;
+        int sum = 0;
+        int average = 0;
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 int value = rand.nextInt(50);
@@ -19,6 +20,7 @@ public class Main {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 System.out.print(arr[i][j] + " ");
+                sum += arr[i][j];
                 if(max < arr[i][j]){
                     max = arr[i][j];
                 }
@@ -31,8 +33,8 @@ public class Main {
 
         System.out.println("max = " + max);
         System.out.println("min = " + min);
-        mean = (max + min) / 2;
-        System.out.println("mean = " + mean);
+        average = sum / (arr.length * arr.length);
+        System.out.println("average = " + average);
     }
 
 }
